@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Bottom Navigation Sample</string>
+
+    <string name="favorites">Favorites</string>
+    <string name="schedules">Schedules</string>
+    <string name="mine">Mine</string>
+</resources>
