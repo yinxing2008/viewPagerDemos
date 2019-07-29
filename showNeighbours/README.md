@@ -1,6 +1,6 @@
-# BottomNavigationViewSample
-BottomNavigationView+viewPager2+Fragment
+# ViewPager show Left and Right
 
-reference: https://materialdoc.cn/components/bottom-navigation/
 
-关联博客:https://www.jianshu.com/p/43c771b5610a
+# Screenshot
+![](https://media.giphy.com/media/Qu2M92z7jCDlccYM9P/giphy.gif)
+![](https://media.giphy.com/media/QVyK6EoPmEZhCfqHqA/giphy.gif)
