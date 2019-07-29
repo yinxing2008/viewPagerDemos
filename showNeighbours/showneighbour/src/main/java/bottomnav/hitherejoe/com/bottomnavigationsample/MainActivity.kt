@@ -9,11 +9,7 @@ import java.util.*
 
 open class MainActivity : AppCompatActivity() {
 
-    private val favoritesTabIndex = 0
-    private val schedulesTabIndex = 1
-    private val mineTabIndex = 2
-
-    protected val PAGE_TITLES = arrayOf("Page 1", "Page 2", "Page 3", "Page 4", "Page 5")
+    private val pageTitles = arrayOf("Page 1", "Page 2", "Page 3", "Page 4", "Page 5")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +17,7 @@ open class MainActivity : AppCompatActivity() {
 
         val fragments = getFragments()
 
-        vp.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
+        viewPager.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
             override fun getCount(): Int {
                 return fragments.size
             }
@@ -35,8 +31,8 @@ open class MainActivity : AppCompatActivity() {
     private fun getFragments(): ArrayList<Fragment> {
         val fragments = ArrayList<Fragment>()
 
-        for (index in 0 until PAGE_TITLES.size) {
-            val fragment = BaseFragment.buildIntent(PAGE_TITLES[index], index)
+        for (index in 0 until pageTitles.size) {
+            val fragment = BaseFragment.buildIntent(pageTitles[index])
             fragments.add(fragment)
         }
 

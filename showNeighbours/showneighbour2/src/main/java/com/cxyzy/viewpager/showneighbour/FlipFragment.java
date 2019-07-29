@@ -33,9 +33,7 @@ public final class FlipFragment extends Fragment {
 
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_flip,
                 container, false);
-        int bg = Color.rgb((int) Math.floor(Math.random() * 128) + 64,
-                (int) Math.floor(Math.random() * 128) + 64,
-                (int) Math.floor(Math.random() * 128) + 64);
+        int bg = getRandomBgColor();
 
         card = rootView.findViewById(R.id.card);
         card.setBackgroundColor(bg);
@@ -43,5 +41,11 @@ public final class FlipFragment extends Fragment {
         title.setText("" + mContent);
         title.setTextColor(Color.WHITE);
         return rootView;
+    }
+
+    private int getRandomBgColor() {
+        return Color.rgb((int) Math.floor(Math.random() * 128) + 64,
+                    (int) Math.floor(Math.random() * 128) + 64,
+                    (int) Math.floor(Math.random() * 128) + 64);
     }
 }
