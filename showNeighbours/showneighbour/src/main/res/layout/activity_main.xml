@@ -4,21 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
-        app:itemIconTint="@color/bnv_tab_item_foreground"
-        app:itemTextColor="@color/bnv_tab_item_foreground"
-        app:menu="@menu/bottom_navigation_main" />
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottomNavigationView"
         android:clipToPadding="false"
         android:paddingLeft="20dp"
         android:paddingRight="20dp" />

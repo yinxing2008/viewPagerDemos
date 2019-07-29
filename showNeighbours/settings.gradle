@@ -1,1 +1,1 @@
-include ':app', ':showneighbour2'
+include ':showneighbour', ':showneighbour2'

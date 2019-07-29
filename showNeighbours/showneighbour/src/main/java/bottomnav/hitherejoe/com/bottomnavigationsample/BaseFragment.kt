@@ -9,12 +9,12 @@ import androidx.fragment.app.Fragment
 
 class BaseFragment : Fragment() {
     private var title: String? = ""
-    private var index: Int = 0
+    private var index: Int? = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        title = arguments?.getString("title")
-        index = arguments?.getInt("index", 0)!!
+        title = arguments?.getString(EXTRA_TITLE)
+        index = arguments?.getInt(EXTRA_INDEX, 0)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -28,5 +28,18 @@ class BaseFragment : Fragment() {
             view.setBackgroundResource(R.color.cc)
         }
         return view
+    }
+
+    companion object {
+        private const val EXTRA_TITLE = "title"
+        private const val EXTRA_INDEX = "index"
+        fun buildIntent(title: String, index: Int): BaseFragment {
+            val fragment = BaseFragment()
+            var bundle = Bundle()
+            bundle.putString(EXTRA_TITLE, title)
+            bundle.putInt(EXTRA_INDEX, index)
+            fragment.arguments = bundle
+            return fragment
+        }
     }
 }
