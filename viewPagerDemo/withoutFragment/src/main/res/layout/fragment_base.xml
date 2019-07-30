@@ -11,5 +11,5 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="40sp"
-        tools:text="TextView" />
+        android:text="TextView" />
 </LinearLayout>

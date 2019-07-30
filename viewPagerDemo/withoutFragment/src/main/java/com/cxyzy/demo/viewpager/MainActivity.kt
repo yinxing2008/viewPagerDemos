@@ -6,6 +6,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentStatePagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import android.view.View
+import androidx.viewpager.widget.PagerAdapter
+
+
 
 open class MainActivity : AppCompatActivity() {
 
@@ -15,27 +21,35 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fragments = getFragments()
 
-        viewPager.adapter = object : FragmentStatePagerAdapter(supportFragmentManager) {
+        viewPager.setAdapter(object : PagerAdapter() {
+            var titles = arrayOf("Eins", "Zwei", "Drei")
+            var layouts = intArrayOf(R.layout.fragment_base, R.layout.fragment_base, R.layout.fragment_base)
+
+            override fun instantiateItem(container: ViewGroup, position: Int): Any {
+                val inflater = LayoutInflater.from(this@MainActivity)
+                val layout = inflater.inflate(layouts[position], container, false) as ViewGroup
+                container.addView(layout)
+                return layout
+            }
+
+            override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+                container.removeView(`object` as View)
+            }
+
+            override fun getPageTitle(position: Int): CharSequence? {
+                return titles[position]
+            }
+
             override fun getCount(): Int {
-                return fragments.size
+                return layouts.size
             }
 
-            override fun getItem(position: Int): Fragment {
-                return fragments[position]
+            override fun isViewFromObject(view: View, `object`: Any): Boolean {
+                return view === `object`
             }
-        }
+        })
     }
 
-    private fun getFragments(): ArrayList<Fragment> {
-        val fragments = ArrayList<Fragment>()
 
-        for (index in 0 until pageTitles.size) {
-            val fragment = MyFragment.buildIntent(pageTitles[index])
-            fragments.add(fragment)
-        }
-
-        return fragments
-    }
 }
