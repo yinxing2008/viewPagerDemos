@@ -9,8 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
-
-open class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private val pageTitles = arrayOf("Page 1", "Page 2", "Page 3", "Page 4", "Page 5")
 

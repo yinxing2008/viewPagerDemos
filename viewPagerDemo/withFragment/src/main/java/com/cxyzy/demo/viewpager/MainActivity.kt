@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-open class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
 
     private val pageTitles = arrayOf("Page 1", "Page 2", "Page 3", "Page 4", "Page 5")
 
