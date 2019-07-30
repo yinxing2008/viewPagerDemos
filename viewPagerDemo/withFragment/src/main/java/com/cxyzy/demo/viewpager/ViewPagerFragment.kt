@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 
-class MyFragment : Fragment() {
+class ViewPagerFragment : Fragment() {
     private var title: String? = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,15 +16,15 @@ class MyFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = View.inflate(context, R.layout.fragment_my, null)
+        val view = View.inflate(context, R.layout.fragment_view_pager, null)
         view.findViewById<TextView>(R.id.textView).text = title
         return view
     }
 
     companion object {
         private const val EXTRA_TITLE = "title"
-        fun buildIntent(title: String): MyFragment {
-            val fragment = MyFragment()
+        fun buildIntent(title: String): ViewPagerFragment {
+            val fragment = ViewPagerFragment()
             var bundle = Bundle()
             bundle.putString(EXTRA_TITLE, title)
             fragment.arguments = bundle
