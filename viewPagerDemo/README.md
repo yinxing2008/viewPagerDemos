@@ -1,8 +1,6 @@
-# ViewPager show Left and Right
+# ViewPager demo
 
-
-# Screenshot
-![](https://media.giphy.com/media/Qu2M92z7jCDlccYM9P/giphy.gif)
-![](https://media.giphy.com/media/QVyK6EoPmEZhCfqHqA/giphy.gif)
-# Blog
-https://www.jianshu.com/p/fc491f15ea98
+1. withFragment
+Basic viewPager demo with fragment
+2. withoutFragment
+Basic viewPager demo without fragment
