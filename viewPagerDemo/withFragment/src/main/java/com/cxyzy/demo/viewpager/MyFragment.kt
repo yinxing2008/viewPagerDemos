@@ -16,7 +16,7 @@ class MyFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = View.inflate(context, R.layout.fragment_base, null)
+        val view = View.inflate(context, R.layout.fragment_my, null)
         view.findViewById<TextView>(R.id.textView).text = title
         return view
     }

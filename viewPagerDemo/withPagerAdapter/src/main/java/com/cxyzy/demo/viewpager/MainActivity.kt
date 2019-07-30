@@ -18,15 +18,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewPager.adapter = object : PagerAdapter() {
-            var layouts = intArrayOf(R.layout.fragment_base, R.layout.fragment_base, R.layout.fragment_base)
-
             override fun instantiateItem(container: ViewGroup, position: Int): Any {
                 val inflater = LayoutInflater.from(this@MainActivity)
-                val layout = inflater.inflate(layouts[position], container, false) as ViewGroup
-                val textView = layout.findViewById<TextView>(R.id.textView)
+                val rootView = inflater.inflate(R.layout.view_page, container, false) as ViewGroup
+                val textView = rootView.findViewById<TextView>(R.id.textView)
                 textView.text = getPageTitle(position)
-                container.addView(layout)
-                return layout
+                container.addView(rootView)
+                return rootView
             }
 
             override fun destroyItem(container: ViewGroup, position: Int, obj: Any) {
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun getCount(): Int {
-                return layouts.size
+                return pageTitles.size
             }
 
             override fun isViewFromObject(view: View, obj: Any): Boolean {
