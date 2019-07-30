@@ -1,16 +1,13 @@
 package com.cxyzy.demo.viewpager
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentStatePagerAdapter
-import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
-import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
-
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 open class MainActivity : AppCompatActivity() {
@@ -21,34 +18,34 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        viewPager.setAdapter(object : PagerAdapter() {
-            var titles = arrayOf("Eins", "Zwei", "Drei")
+        viewPager.adapter = object : PagerAdapter() {
             var layouts = intArrayOf(R.layout.fragment_base, R.layout.fragment_base, R.layout.fragment_base)
 
             override fun instantiateItem(container: ViewGroup, position: Int): Any {
                 val inflater = LayoutInflater.from(this@MainActivity)
                 val layout = inflater.inflate(layouts[position], container, false) as ViewGroup
+                val textView = layout.findViewById<TextView>(R.id.textView)
+                textView.text = getPageTitle(position)
                 container.addView(layout)
                 return layout
             }
 
-            override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-                container.removeView(`object` as View)
+            override fun destroyItem(container: ViewGroup, position: Int, obj: Any) {
+                container.removeView(obj as View)
             }
 
             override fun getPageTitle(position: Int): CharSequence? {
-                return titles[position]
+                return pageTitles[position]
             }
 
             override fun getCount(): Int {
                 return layouts.size
             }
 
-            override fun isViewFromObject(view: View, `object`: Any): Boolean {
-                return view === `object`
+            override fun isViewFromObject(view: View, obj: Any): Boolean {
+                return view === obj
             }
-        })
+        }
     }
 
 
