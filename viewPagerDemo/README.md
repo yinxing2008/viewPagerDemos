@@ -1,6 +1,6 @@
 # ViewPager demos
 
-1. withFragment 
+1. withFragment  
 ViewPager demo with fragment.
 2. withFragmentAsView  
 Wrap viewPager as a single view.
