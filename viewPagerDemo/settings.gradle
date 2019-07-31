@@ -1,1 +1,1 @@
-include ':withFragment', ':withPagerAdapter',':withFragmentAsView'
+include ':withFragment', ':withPagerAdapter',':withFragmentAsView',':withPagerAdapterAsView'
