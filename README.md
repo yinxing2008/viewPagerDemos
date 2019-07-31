@@ -2,12 +2,11 @@
 
 
 # 1.showNeighbours
-## ViewPager show Left and Right
-
-## Screenshot
+  ViewPager show Left and Right
+1) Screenshots
 ![](https://media.giphy.com/media/Qu2M92z7jCDlccYM9P/giphy.gif)
 ![](https://media.giphy.com/media/QVyK6EoPmEZhCfqHqA/giphy.gif)
-## Blog
+2) Blog
 https://www.jianshu.com/p/fc491f15ea98
 
 # 2.viewPagerDemo
