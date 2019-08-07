@@ -10,6 +10,7 @@ import androidx.viewpager.widget.PagerAdapter
 import com.cxyzy.vp.demos.R
 import kotlinx.android.synthetic.main.activity_vp4.*
 
+
 class ViewPagerActivity3 : AppCompatActivity() {
 
     private val pageTitles = arrayOf("Page 1", "Page 2", "Page 3", "Page 4", "Page 5")
@@ -19,6 +20,7 @@ class ViewPagerActivity3 : AppCompatActivity() {
         setContentView(R.layout.activity_vp3)
 
         viewPager.adapter = object : PagerAdapter() {
+
             override fun instantiateItem(container: ViewGroup, position: Int): Any {
                 val inflater = LayoutInflater.from(this@ViewPagerActivity3)
                 val rootView = inflater.inflate(R.layout.view_page3, container, false) as ViewGroup
@@ -26,6 +28,10 @@ class ViewPagerActivity3 : AppCompatActivity() {
                 textView.text = getPageTitle(position)
                 container.addView(rootView)
                 return rootView
+            }
+
+            override fun getItemPosition(obj: Any): Int {
+                return POSITION_NONE
             }
 
             override fun destroyItem(container: ViewGroup, position: Int, obj: Any) {

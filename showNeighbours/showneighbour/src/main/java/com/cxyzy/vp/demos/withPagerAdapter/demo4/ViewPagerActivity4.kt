@@ -31,6 +31,10 @@ class ViewPagerActivity4 : AppCompatActivity() {
                 return rootView
             }
 
+            override fun getItemPosition(obj: Any): Int {
+                return POSITION_NONE
+            }
+
             override fun destroyItem(container: ViewGroup, position: Int, obj: Any) {
                 container.removeView(obj as View)
             }
