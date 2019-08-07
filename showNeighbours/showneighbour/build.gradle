@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "bottomnav.hitherejoe.com.bottomnavigationsample"
+        applicationId "com.cxyzy.vp.demos"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -26,4 +26,5 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation "androidx.core:core-ktx:1.0.2"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'com.github.cxyzy1:kotlinUtils:1.0.9'
 }
