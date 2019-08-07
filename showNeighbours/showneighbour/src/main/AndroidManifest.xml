@@ -17,8 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cxyzy.vp.demos.demo1.ViewPagerActivity1" />
-        <activity android:name="com.cxyzy.vp.demos.demo2.ViewPagerActivity2" />
+        <activity android:name="com.cxyzy.vp.demos.withFragment.demo1.ViewPagerActivity1" />
+        <activity android:name="com.cxyzy.vp.demos.withFragment.demo2.ViewPagerActivity2" />
+        <activity android:name="com.cxyzy.vp.demos.withPagerAdapter.demo3.ViewPagerActivity3" />
+        <activity android:name=".withPagerAdapter.demo4.ViewPagerActivity4" />
     </application>
 
 </manifest>
