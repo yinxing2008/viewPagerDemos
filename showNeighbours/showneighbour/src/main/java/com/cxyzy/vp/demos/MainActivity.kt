@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.cxyzy.utils.ext.startActivity
 import com.cxyzy.vp.demos.withFragment.demo1.ViewPagerActivity1
-import com.cxyzy.vp.demos.withPagerAdapter.demo3.ViewPagerActivity3
-import com.cxyzy.vp.demos.withFragment.demo2.ViewPagerActivity2
 import com.cxyzy.vp.demos.withPagerAdapter.demo4.ViewPagerActivity4
+import com.cxyzy.vp.demos.withFragment.demo2.ViewPagerActivity2
+import com.cxyzy.vp.demos.withPagerAdapter.demo3.ViewPagerActivity3
 import kotlinx.android.synthetic.main.activity_main.*
 
 open class MainActivity : AppCompatActivity() {

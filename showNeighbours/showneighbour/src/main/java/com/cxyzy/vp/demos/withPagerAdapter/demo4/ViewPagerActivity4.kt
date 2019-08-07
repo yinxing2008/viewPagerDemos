@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import com.cxyzy.vp.demos.R
-import kotlinx.android.synthetic.main.activity_vp3.*
+import kotlinx.android.synthetic.main.activity_vp4.*
 import kotlin.math.floor
 
 class ViewPagerActivity4 : AppCompatActivity() {
@@ -27,6 +27,7 @@ class ViewPagerActivity4 : AppCompatActivity() {
                 val textView = rootView.findViewById<TextView>(R.id.textView)
                 textView.text = getPageTitle(position)
                 container.addView(rootView)
+                rootView.setBackgroundColor(getRandomBgColor())
                 return rootView
             }
 
@@ -47,4 +48,12 @@ class ViewPagerActivity4 : AppCompatActivity() {
             }
         }
     }
+
+    private fun getRandomBgColor(): Int {
+        return Color.rgb(floor(Math.random() * 128).toInt() + 64,
+                floor(Math.random() * 128).toInt() + 64,
+                floor(Math.random() * 128).toInt() + 64)
+    }
+
+
 }
